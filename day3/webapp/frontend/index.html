@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ISP2025</title>
+        <link rel="stylesheet" href="style/mystyle.css">
+    </head>
+    <body>
+        <script src="src/tools.js" defer></script>
+        <h1 id="title">API development with Python using Flask</h1>
+        <h2>Hotel application</h2>
+        <h2>Loging Form example</h2>
+        <form onsubmit="loging(event)">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br>
+            <label for="userPass">User Password:</label><br>
+            <input type="text" id="userPass" name="userPass"><br>
+            <input type="submit" value="Submit">
+        </form> 
+        <h2>
+            Room selection 
+        </h2>
+        <label for="beds">Select the bed that suits you better:</label><br>
+        <select id="selectBed" name="beds">
+            <option value="s">1 single</option>
+            <option value="m">2 single</option>
+            <option value="l">Queen</option>
+        </select><br>
+        <label for="nroom">Select the number of rooms:</label><br>
+        <select id="selectRoom" name="rooms">
+            <option value="1">1 Room</option>
+            <option value="2">2 Rooms</option>
+            <option value="3">3 Rooms</option>
+        </select><br>
+        <form onsubmit="selectBed(event)">
+            <input type="submit" value="Submit"><br>
+        </form>
+        <h2>
+            Baggage classification
+        </h2>
+        <p>Please submit a photo of your bags to make the classification</p>
+        <form id="fileUploadForm" onsubmit="uploadPhoto(event)">
+            <label for="fileInput">Select a file:</label><br>
+            <input type="file" id="fileInput" name="fileInput" required><br><br>
+            <input type="submit" value="Upload File">
+        </form>
+    </body>
+</html>
