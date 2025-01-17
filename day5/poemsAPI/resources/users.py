@@ -121,7 +121,7 @@ class FileManagement(Resource):
         
 
     def post(self):
-        auth_header = request.headers.get('Authorization')
+        #auth_header = request.headers.get('Authorization')
         # if not auth_header:
         #     return {'message':'Not user auth token detected'}, HTTPStatus.UNAUTHORIZED
         '''

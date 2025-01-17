@@ -26,12 +26,12 @@
                 </form>
             </div> 
             <div class="avatarImg">
-                <form id="fileUploadForm" onsubmit="uploadPhoto(event)">
+                <form id="fileUploadForm" onsubmit="uploadPhoto(event);">
                     <label for="fileInput">Choose the photo for your avatar:</label><br>
-                    <input type="file" id="fileInput" name="fileInput" required><br><br>
+                    <input type="file" id="fileInput" name="fileInput" required onchange="displayImage(event);"><br><br>
+                    <div id="avatarDisplay"></div>   
                     <input type="submit" value="Upload File">
-                </form>
-                <div id="avatarDisplay"></div>            
+                </form>         
             </div>
         </div><br>
         <div class="tcenter">

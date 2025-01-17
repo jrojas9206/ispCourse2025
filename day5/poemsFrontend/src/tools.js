@@ -91,12 +91,9 @@ function uploadPhoto(event){
     formData.append('fileInput', file);
 
     // Send the file using fetch to a server endpoint
-    fetch('http://127.0.0.1:5000/upload', {
+    fetch('http://127.0.0.1:5000/uploadimage', {
         method: 'POST',
         body: formData,
-        headers: {
-            'Authorization': `Bearer ${sessionID}` // Adding sessionID as a custom header
-        }
     })
     .then(response => {
         if (!response.ok) {
@@ -112,6 +109,36 @@ function uploadPhoto(event){
         console.error('Error:', error);
         alert('An error occurred while uploading the file.');
     });
+}
+
+function displayImage(event){
+    event.preventDefault(); 
+
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];  // Access the first file selected
+
+    if (!file) {
+        alert('Please select a file first!');
+        return;
+    }
+
+    const div2img = document.getElementById('avatarDisplay');
+    div2img.innerHTML = ''; // Clear previous image
+
+    var objImage = document.createElement('img');
+    objImage.alt = 'Uploaded Image';
+    objImage.style.width = '75px';
+    objImage.style.height = '75px';
+    div2img.appendChild(objImage);
+
+    const fileReader = new FileReader();
+    fileReader.onload = function(event) {
+        objImage.src = event.target.result; // Correctly set the image source
+    };
+
+    fileReader.readAsDataURL(file);
+
+    console.log(file);
 }
 
 function uploadPoem(event){
