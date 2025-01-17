@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ISP2025</title>
+        <link rel="stylesheet" href="style/mystyle.css">
+    </head>
+    <body>
+        <script src="src/tools.js" defer></script>
+        <h1 id="title" class="ti">API development with Python using Flask</h1>
+        <h2 class="nmText">JP's Poems</h2>
+        <p class="nmText">Find the calm and joy writing your thoughts!</p>
+        <h2 class="tcenter">Login and singup</h2>
+        <div id="logcover">
+            <div class="credentialsUsr">
+                <form onsubmit="loging(event)">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname"><br>
+                    <label for="userPass">Password:</label><br>
+                    <input type="text" id="userPass" name="userPass"><br>
+                    <label for="userAvatarName">Avatar name:</label><br>
+                    <input type="text" id="userAvatarName" name="userAvatarName"><br>
+                    <input type="submit" value="Login">
+                    <input type="button" value="Singup" onclick="singup(event)">
+                </form>
+            </div> 
+            <div class="avatarImg">
+                <form id="fileUploadForm" onsubmit="uploadPhoto(event)">
+                    <label for="fileInput">Choose the photo for your avatar:</label><br>
+                    <input type="file" id="fileInput" name="fileInput" required><br><br>
+                    <input type="submit" value="Upload File">
+                </form>
+                <div id="avatarDisplay"></div>            
+            </div>
+        </div><br>
+        <div class="tcenter">
+            <h2>Share space</h2>
+            <form onsubmit="uploadPoem(event)">
+                <input type="text" id="poemSpace"  name="userPass"><br>
+                <input type="submit" value="Share">
+            </form>
+        </div>
+    </body>
+</html>
